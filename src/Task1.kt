@@ -17,11 +17,17 @@ fun main()
         }
     }
 
-    println("Двумерный массив:")//вывод двумерного массива
-    for (i in 0 until rows) {
-        println(array[i].joinToString(" "))
+    println("Двумерный массив:")//вывод двумерного массива с помощью join.ToString
+    for (i in 0 until rows)
+    {
+        for (j in 0 until colums)
+        {
+            print("${array[i][j]}  ")//заполнение элементов массива
+        }
+        println()
     }
 
-    val uniqueDigits = array.flatten().joinToString("").toSet()
-    println("Количество различных цифр: ${uniqueDigits.size}")
+    val uniqueDigits = array.flatten().joinToString("").toSet()//flatten исп. для преобразования дв.массива в одномерный список
+    println("Количество различных цифр: ${uniqueDigits.size}")//joim исп. для объединения всех чисел в одну строку
+//to set исп. для вывода размера множества `uniqueDigits.size`, что соответствует количеству уникальных цифр.
 }
